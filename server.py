@@ -14,7 +14,14 @@ def getExtenso(number):
             'extenso': translator.translate(number)
         }
     else:
-        abort(401)
+        return '<h2>Tente um valor diferente. O número digitado deve estar entre -99999 e 99999</h2>';
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return "<h1>Página não encontrada : 404</h1><br><h3>A página que você está procurando pode ter sido removida, teve seu nome alterado ou está temporariamente indisponível.</h3>"
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
