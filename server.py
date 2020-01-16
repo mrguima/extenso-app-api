@@ -14,7 +14,10 @@ def getExtenso(number):
             'extenso': translator.translate(number)
         }
     else:
-        return '<h2>Tente um valor diferente. O número digitado deve estar entre -99999 e 99999</h2>';
+        return {
+            'success'   : False,
+            'msg'       : 'Número digitado está fora do intervalo [-99999, 99999]'
+        }
 
 
 @app.errorhandler(404)
