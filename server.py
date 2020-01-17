@@ -11,6 +11,7 @@ def index():
 def getExtenso(number):
     if number > -100000 and number < 100000:
         return {
+            'success'   : True,
             'extenso': translator.translate(number)
         }
     else:
